@@ -1,0 +1,123 @@
+
+
+body{
+  background-color: #F5F7FA;
+}
+//scss for common component
+.hr-border {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.border-btm{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.date-width{
+  max-width: 7rem;
+  font-size: 14px!important;
+}
+select{
+  font-size: 14px!important;
+}
+//scc for profile page
+
+ .ngx-editor-textarea{
+   min-height:150px!important;
+ }
+
+ 
+//saas for time picker/
+.form-inline.timeinline .form-control{ 
+  width: inherit;
+}
+///theme adjustment
+
+//color for theme-button
+
+.theme-button{
+  background-color: #18252a!important;
+
+  color: #ffffff !important;
+}
+.theme-header-color{
+  background-color: #2e5851!important;
+  color: #ffffff!important;
+}
+.btn-thm-secondary{
+  background-color: #1EE0DF!important;
+  color: #ffffff!important;
+}
+.btn-thm-primary{
+  // background-image: linear-gradient(-90deg, #1EE0DF 0%, #6AF5DD 100%);
+  background-image: linear-gradient(to right top, #1ee0df, #38e5df, #4bebde, #5bf0dd, #6af5dd);
+  border-radius: 27.5px;
+  color: #ffffff!important;
+}
+
+.custom-control-input:checked~.custom-control-label::before { border-color: #18252a!important;
+  background-color: #18252a!important;}
+
+  .card{border-radius: 0px!important;}
+  .card .card-img-top{border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; } 
+ 
+ .custom-breadcrumb{ 
+                
+   .breadcrumb{ font-size: 14px;   background-color: transparent; border:0px;  border-radius: 0px; padding-top: 0px; padding-left: 0px; 
+   .breadcrumb-item{font-size: 14px;
+                     a{
+                       color: #000000; font-weight: 600;
+                      }
+                   }
+             }
+ }
+ 
+ //modal header css
+
+ .modal-header{
+  color: #fff;
+  background-color: #150020;
+
+  justify-content: center!important;
+ }
+ //modal header css ends here
+
+
+///theme adjustment
+
+.totalcount{font-size: 35px;}
+
+
+
+// common css gt
+
+.deleteicon{
+  img{
+      width: 100%;
+      max-width: 35px;
+      cursor: pointer;
+  }
+}
+hr{
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+
+.nav-pills .nav-link.active{
+  background-color:#000000 !important;
+  color: #ffffff !important;
+}
+.nav-link{
+  color: #000000;
+}
+input.form-control:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.content-management .mat-tab-label, .mat-tab-link{
+  color: #1b0d0d;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

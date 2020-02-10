@@ -1,0 +1,106 @@
+<section id="login-form" class="container-fluid banner-img">
+  <div class="row hv-100 justify-content-center align-items-center">
+    <div class="col-md-4 p-4 wow bounceInUp">
+      <!-- form card login -->
+      <div class="card bdr-r-25">
+        <div class="card-header bdr-header bg-black d-flex align-items-center  p-0 justify-content-center">
+          <img class="w-100 logo-height " src="assets/images/whitelogo.png" />
+          <!-- <h2 class="m-0 text-white">Brand -Logo </h2> -->
+        </div>
+        <div class="card-body">
+            <div class="alert-danger" *ngIf="message">{{messages}}</div>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+            <div class="form-group">
+              <label class="font-weight-bold" for="uname1">Username</label>
+              <input type="text" class="form-control" maxlength="50" (keydown)="keyDownHandler($event)"
+                formControlName="email">
+              <small class="text-danger" *ngIf="submitted && f.email.errors && f.email.errors.required">UserName is
+                required</small>
+              <!-- <small class="text-danger" *ngIf="submitted && f.email.errors && f.email.errors.minLength"></small>  -->
+              <small class="text-danger" *ngIf="submitted && f.email.errors && f.email.errors.maxLength">Maximum 50 char
+                is allowed</small>
+            </div>
+            <div class="form-group">
+              <label class="font-weight-bold mt-2">Password</label>
+              <input type="password" class="form-control" maxlength="15" (keydown)="keyDownHandler($event)"
+                formControlName="password" autocomplete="new-password">
+              <small class="text-danger" *ngIf="submitted && f.password.errors && f.password.errors.required">Password
+                is required</small>
+              <small class="text-danger" *ngIf="submitted && f.password.errors && f.password.errors.minlength">Minimum 8
+                char is required</small>
+              <small class="text-danger" *ngIf="submitted && f.password.errors && f.password.errors.maxlength">Maximum
+                15 char is allowed</small>
+            </div>
+            <div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Remember me</label>
+                <a class="pull-right text-primary fs-13"
+                  (click)="openVerticallyCentered(content)">{{'Forgot Password?'}}</a>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <!-- routerLink="/admin/dashboard" -->
+              <button type="submit" class="btn-round  form-control btn theme-button" id="btnLogin">
+                <i class="fa fa-lock"><span class="ml-2 ">Login</span></i>
+              </button>
+            </div>
+          </form>
+        </div>
+        <!--/card-block-->
+      </div>
+      <!-- /form card login -->
+    </div>
+  </div>
+  <!--/row-->
+  <!--/container-->
+</section>
+
+<!-- *forgot password -->
+<!-- *forgot password -->
+<ng-template #content let-modal>
+  <!----- Header  ------>
+
+  <section id="modal-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 frgtpass-head">
+          <h3 class="mx-auto p-3 text-center font-weight-bold"> {{'FORGOT PASSWORD?'}} </h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="forgot-pass-modal">
+    <div class="container-fluid">
+      <div class="body">
+        <form [formGroup]="forgotForm" (ngSubmit)="onSubmitForgot(forgotForm.value)">
+          <div class="text-center mb-2">
+            <label>Enter your email address below to recieve reset password link.</label>
+          </div>
+          <div class="alert-success mb-2" *ngIf="forgotmessage">{{ forgotmessages }}</div>
+          <div class="alert-danger mb-2" *ngIf="forgotmessage1">{{ forgotmessages1 }}</div>
+          <div class="form-line d-inline">
+
+            <i class="fa fa-envelope mr-2"></i>
+            <input type="email" class="form-control d-inline" (keydown)="keyDownHandler($event)" name="email"
+              maxlength="50" placeholder="Email" formControlName="email" autofocus="" aria-required="true">
+            <small class="text-danger" *ngIf="forSubmitted && ps.email.errors && ps.email.errors.required">Email
+              is required</small>
+            <small class="text-danger" *ngIf="forSubmitted && ps.email.errors && ps.email.errors.pattern">Email format
+              is not valid</small>
+            <small class="text-danger" *ngIf="forSubmitted && ps.email.errors && ps.email.errors.maxlength">Maximum
+              50 char is allowed</small>
+          </div>
+          <div class="row frgtpass-btns mt-3 mb-4">
+            <div class="col-md-12 text-center">
+              <button type="button" class="btn btn-secondary text-white"
+                (click)="modal.close('Close click')">Cancel</button>
+              <button type="submit" class="ml-3 btn theme-button">Send
+                Password</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</ng-template>

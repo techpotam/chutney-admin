@@ -1,0 +1,219 @@
+.testscroll ::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.testscroll ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.testscroll ::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 30px;
+}
+
+/* Handle on hover */
+.testscroll ::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+.sidebar {
+  position: fixed;
+  // width: 260px;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background: #ffff;
+
+  transition: 0.5s all;
+  z-index: 10px;
+
+  .brand-box {
+    padding: 11px;
+    height: 120px;
+    text-align: center;
+    .brand-logo {
+      height: auto;
+      width: 190px;
+      img {
+        margin-top: -12px;
+      }
+    }
+    span {
+      display: inline-block;
+    }
+    .brand-details {
+      width: calc(100% - 80px);
+      vertical-align: top;
+      padding: 0 10px;
+      .brand-name {
+        font-weight: 400;
+      }
+      span.brand-id {
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+      .vis-status {
+        color: #4a4a4a;
+        font-size: 14px;
+        font-weight: 400;
+      }
+      span {
+        display: inline-block;
+        width: 100%;
+      }
+    }
+  }
+
+  .menu-list {
+    height: calc(100% - 70px);
+    overflow: auto;
+    font-size: 18px;
+    border-right: 1px solid #dddddd;
+    ul {
+      padding: 0px;
+
+      li {
+        a {
+          display: block;
+          padding: 15px;
+          border-top: 1px solid #dddddd;
+          color: #21142e;
+
+          font-weight: 300;
+          text-decoration: none;
+          position: relative;
+        }
+      }
+      li a:hover {
+        background-color: #2b7a78;
+        color: white;
+      }
+      li a.active {
+        background-image: none !important;
+        background-color: #2b7a78;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.active span.icon-lines::after {
+  content: "";
+  width: 100% !important;
+  background: #000000;
+  top: 17px !important;
+  position: absolute;
+  transform: rotate(45deg);
+}
+.active span.icon-lines::before {
+  content: "";
+  width: 100% !important;
+  background: #000000;
+  top: 17px !important;
+  position: absolute;
+  transform: rotate(-45deg);
+}
+.ham-icon.active .icon-lines {
+  background: none !important;
+}
+.menu-list ul li a.active::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  height: 2px;
+  bottom: 0;
+}
+
+@media (max-width: 991px) {
+  .sidebar.active {
+    left: -260px;
+  }
+  .sidebar.inactive {
+    left: 0;
+    z-index: 15;
+  }
+  .header.active {
+    width: 100%;
+  }
+  .header.inactive {
+    width: calc(100% - 260px);
+  }
+  .ham-icon.active .icon-lines {
+    background: #000000 !important;
+  }
+  .active span.icon-lines::before {
+    content: "";
+    width: 30% !important;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(0deg);
+  }
+  .active span.icon-lines::after {
+    content: "";
+    width: 70% !important;
+    top: 9px !important;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(0deg);
+  }
+  .inactive span.icon-lines::after {
+    content: "";
+    width: 100% !important;
+    background: #000000;
+    top: 17px !important;
+    position: absolute;
+    transform: rotate(45deg);
+  }
+  .inactive span.icon-lines::before {
+    content: "";
+    width: 100% !important;
+    background: #000000;
+    top: 17px !important;
+    position: absolute;
+    transform: rotate(-45deg);
+  }
+  .ham-icon.inactive .icon-lines {
+    background: none !important;
+  }
+  .ham-icon {
+    display: block !important;
+  }
+}
+// Pop up log out
+.popup-center {
+  justify-content: center !important;
+  border-bottom: none;
+}
+
+.modal-header.popup-center.logout {
+  padding-bottom: 0px !important;
+}
+
+@media (max-width: 768px) {
+  .contols img {
+    width: 20px;
+  }
+  .header .logo img {
+    width: 65%;
+  }
+  .header .contols {
+    right: 6px;
+    top: 51px;
+  }
+  .header.inactive .contols,
+  .header.inactive .logo {
+    display: none;
+  }
+}
+
+//media query for responsive
+
+@media (max-width: 850px) {
+  .sidebar {
+    display: none;
+  }
+  .sidenav-wrapper {
+    width: 0px;
+  }
+}

@@ -1,0 +1,20 @@
+
+.card{
+    border:none;
+    box-shadow: 0 0 8px 5px #0000001f;
+    .profile-image{
+        img{
+            max-height:130px;
+        }
+        .cameraadjust{
+            position: absolute;
+            right: 36%;
+            bottoM: 1%;
+            background: darkgray;
+            color: #fff;
+            padding: 3px 8px 1px 8px;
+            border-radius: 20px;
+        }
+    
+    }
+}

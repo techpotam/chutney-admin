@@ -1,0 +1,111 @@
+<section id="Blog-details">
+  <div class="container">
+    <div class="row ">
+
+    <div class="col-md-12 d-flex justify-content-between ">
+      <div class="custom-breadcrumb">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/admin/settings/profile">View Profile</a></li>
+            <li class="breadcrumb-item active">Edit Profile</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="font-weight-bold">
+        <h3>User Profile</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<hr class="p-0 m-0" />
+
+<section class="mt-3">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-5 mx-auto pb-5">
+            <div class="card mt-5 wow bounceInUp">
+              <div class="card-body">
+                <div class="row profile-image">
+                  <div class="col-md-12 text-center">
+                    <h2 class="theme-text pb-2">Edit Profile </h2>
+                    <div class="position-relative">
+                      <img class=" img-fluid rounded-circle" id="prfile-image" src="assets/images/user-profille.jpg">
+                      <div class="cameraadjust">
+                        <label class="fa fa-camera"><input class="d-none" type="file"></label>
+                      </div>
+                    </div>
+                    <h4 class="pb-3">John Doe</h4>
+                    <form>
+                      <div class="form-row form-group">
+                        <div class="col">
+                          <strong>Name:</strong>
+                        </div>
+                        <div class="col text-left">
+                          <input type="text" class="form-control" placeholder=" ">
+                        </div>
+                      </div>
+
+                      <div class="form-row form-group">
+                        <div class="col">
+                          <strong>Email:</strong>
+                        </div>
+                        <div class="col text-left">
+                          <input type="text" class="form-control" placeholder="info@Noqaty.com" disabled>
+                        </div>
+                      </div>
+                      <div class="mt-3">
+                        <button routerLink="/theme/modules/settings/profile" routerLinkActive='active' type="button"
+                          class="btn theme-button text-white">Save</button>
+                        <button type="button" class="ml-2 btn btn-secondary">Cancel</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--model for change password-->
+
+<ng-template #content let-modal>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="modal-header">
+      <h4 class="text-center" id="modal-basic-title">Change Password</h4>
+    </div>
+    
+    <div class="modal-body">
+      <div class="control-group">
+        <label for="current_password" class="control-label">Current Password</label>
+        <div class="controls">
+          <input type="password" class="form-control" formControlName="current_pass">
+          <span *ngIf="f.name.hasError('required') && f.name.touched">Name is <strong>required</strong></span>
+        </div>
+      </div>
+      <div class="mt-3 control-group">
+        <label for="new_password" class="control-label">New Password</label>
+        <div class="controls">
+          <input type="password" class="form-control" formControlName="new_pass">
+        </div>
+      </div>
+      <div class="mt-3 control-group">
+        <label for="confirm_password" class="control-label">Confirm Password</label>
+        <div class="controls">
+          <input type="password" class="form-control" formControlName="confirm_pass">
+        </div>
+      </div>
+      <div class="form-group mt-4 text-center">
+        <button type="button" class="btn btn-secondary btn-outline" (click)="modal.close('Close click')">Cancel</button>
+        <button type="submit" class="btn ml-3 theme-button text-white btn-outline">Save</button>
+      </div>
+    </div>
+  </form>
+</ng-template>

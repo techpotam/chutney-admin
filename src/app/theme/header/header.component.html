@@ -1,0 +1,60 @@
+<div class="container-fluid header-adjust h-100 theme-header-color">
+  <div class="row">
+    <div class="col-md-12 ">
+       <!-- <div class="d-inline">
+          <img class=" mt-2" src="assets/images/noqaty_logo.svg" />
+       </div>   -->
+      <div class=" pt-3">
+        <div class="contols d-flex justify-content-end">
+          <div class="row">
+            <div class="col">
+              <div ngbDropdown class="d-inline-block userdropdown">
+                <div class="mr-3  user-circle" id="dropdown1" ngbDropdownToggle><i
+                    class="fa text-white fa-size fa-user"></i></div>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button routerLink="/admin/settings/profile" class="text-center" ngbDropdownItem>Profile</button>
+                  <button (click)="Logout()" type="button" class="text-center" ngbDropdownItem>Logout</button>
+                  <!-- <button ngbDropdownItem></button> -->
+                </div>
+              </div>
+              <div ngbDropdown class="d-none mobile-display userdropdown">
+                <div class="mr-3  user-circle" id="dropdown1" ngbDropdownToggle><i
+                    class="fa text-white fa-size fa-align-justify"></i>
+                  </div>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button routerLink="/admin/dashboard" class="text-center" ngbDropdownItem>Dashboard</button>
+                  <button routerLink="/admin/user-management/manage-users" class="text-center" ngbDropdownItem> User Management</button>
+
+                  <button type="button" routerLink="/admin/contactus" class="text-center" ngbDropdownItem>Manage Contact Us</button>
+                  <button type="button" routerLink="/admin/manage-rating" class="text-center" ngbDropdownItem>Manage Ratings</button>
+                  <button type="button" routerLink="/admin/manage-offers/" class="text-center" ngbDropdownItem>Manage Offers</button>
+                  <button type="button" routerLink="/admin/manage-merchant" class="text-center" ngbDropdownItem>Manage Merchants</button>
+                  <!-- <button ngbDropdownItem></button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- LOG OUT POP UP -->
+<ng-template #content let-modal>
+  <div class="modal-header popup-center logout">
+    <h4 class="modal-title text-center" id="modal-basic-title">{{'Logout'}}</h4>
+  </div>
+  <div class="modal-body text-center">
+    <div class="form-group">
+      <label class="position-static">{{'Are you sure you want to logout ?'}}</label>
+    </div>
+    <div class="form-group">
+      <button type="button" class="btn btn-secondary btn-outline"
+        (click)="modal.close('Close click')">{{'Cancel'}}</button>
+      <button type="button" class="btn theme-button text-white btn-outline" (click)="logout()">{{'Logout'}}</button>
+    </div>
+  </div>
+</ng-template>

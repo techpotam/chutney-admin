@@ -1,0 +1,50 @@
+<div>
+    <h4>Top State Pakages</h4>
+</div>
+
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col d-flex justify-content-end">
+                <div class="add-package">
+                    <button class="btn theme-button">Add Packages</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="toppackages mt-4">
+    <div class="container-fluid">
+        <div class="row">
+            <div *ngFor="let element of cards" class="abc pb-3 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+               <a routerLink="/admin/packages/packagesinside"> <mat-card>
+                    <div class="d-flex py-2 justify-content-center">
+                        <h5 class="mat-card-heading">{{element.stateName}}</h5>
+                    </div>
+                    <img mat-card-image src="{{element.url}}" alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                            <p>
+                                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from
+                                Japan.
+                                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
+                                originally
+                                bred for hunting.
+                            </p>
+                        </mat-card-content>
+                    <div class="d-flex justify-content-end">
+                            <button mat-button>Edit</button>
+
+                        <button mat-button>Remove</button>
+
+
+                    </div>
+
+                </mat-card>
+            </a>
+
+            </div>
+        </div>
+    </div>
+
+</section>

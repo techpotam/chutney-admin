@@ -1,0 +1,42 @@
+#dashborad-main {
+  hr {
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+  }
+}
+.dis-dashboard h4 {
+  font-size: 26px;
+  font-weight: normal;
+  color: #17252a;
+}
+
+.inner-content {
+  .form-group label {
+    font-size: 16px;
+  }
+  .card {
+    min-height: 110px;
+    background: #ffffff !important;
+    color: #17252a;
+    box-shadow: 0 0 8px 0px #0000001f;
+  }
+  .card-adjust {
+    .card-content {
+      color: #17252a;
+    }
+    .card-content .fa {
+      font-size: 35px;
+    }
+  }
+}
+
+.ngx-datepicker-position-bottom-right {
+  z-index: 500 !important;
+}
+
+.card:hover {
+  transform: scale(1.08);
+  transition: 200ms;
+}
+.card {
+  transition: 200ms;
+}

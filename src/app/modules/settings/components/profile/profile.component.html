@@ -1,0 +1,93 @@
+<section id="Blog-details">
+  <div class="container-fluid dis-dashboard">
+    <div class="row">
+      <div class="col-lg-12">
+        <h3> Manage User</h3>
+      </div>
+    </div>
+  </div>
+  <hr />
+</section>
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-5 mx-auto pb-5">
+            <div class="card mt-4 wow bounceInUp" data-wow-delay="5sec">
+              <div class="card-body">
+                <div class="row profile-image">
+                  <div class="col-md-12 col-sm-12 text-center" >
+                    <h2 class="theme-text pb-3">Profile Information</h2>
+                    <!-- assets/images/user-profille.jpg -->
+                    <img class="img-fluid rounded-circle" src="assets/images/user-profille.jpg" id="prfile-image" >
+                    <h4 class="pb-4">profileaname</h4>
+                    <div class="form-row form-group">
+                      <div class="col">
+                        <strong>Name:</strong>
+                      </div>
+
+                      <div class="col text-left">
+                      profileaname
+                      </div>
+                    </div>
+                    <div class="form-row form-group">
+                      <div class="col">
+                        <strong> Email:</strong>
+                      </div>
+                      <div class="col text-left">
+                      admin@Noqaty.com
+                      </div>
+                    </div>
+                    <div class="ml-4">
+                      <button routerLink="/admin/settings/edit-profile" routerLinkActive='active' type="button"
+                        class="btn theme-button">Edit</button>
+                      <button type="button" (click)="openVerticallyCentered(content)"
+                        class="ml-2 btn btn-secondary">Change
+                        Password</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section>
+    <ng-template #content let-modal>
+      <div *ngIf="message">
+        <span class="text-centre text-info"> Password is changed Successfully</span>
+      </div>
+      <form [formGroup]="changePasswordForm" (ngSubmit)="onSubmit()">
+        <div class="modal-header">
+          <h4 class="text-center" id="modal-basic-title">Change Password</h4>
+        </div>
+        <div class="modal-body">
+          <div class="control-group">
+            <label for="current_password" class="control-label">Current Password</label>
+            <div class="controls">
+              <input type="password" class="form-control" name="current_password" formControlName="current_pass">
+            </div>
+          </div>
+          <div class="mt-3 control-group">
+            <label for="new_password" class="control-label">New Password</label>
+            <div class="controls">
+              <input type="password" class="form-control" name="new_password" formControlName="new_pass">
+            </div>
+          </div>
+          <div class="mt-3 control-group">
+            <label for="confirm_password" class="control-label">Confirm Password</label>
+            <div class="controls">
+              <input type="password" class="form-control" name="confirm_password" formControlName="confirm_pass">
+            </div>
+          </div>
+          <div class="form-group mt-4 text-center">
+            <button type="button" class="btn btn-secondary btn-outline"
+              (click)="modal.close('Close click')">Cancel</button>
+            <button type="submit" class="btn ml-3 theme-button text-white btn-outline">Save</button>
+          </div>
+        </div>
+      </form>
+    </ng-template>

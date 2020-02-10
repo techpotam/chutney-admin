@@ -1,0 +1,50 @@
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div>
+                    <h4>State Packages Inside</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mt-5">
+                <div class="table-hover table-responsive">
+                    <table class="table table-bordered">
+                        <thead  class="theme-button">
+                            <tr>
+                                <th>Packages Name</th>
+                                <th>Image</th>
+                                <th> Location</th>
+                                <th> Aminities</th>
+                                <th> Transportaion</th>
+                                <th>Address</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr *ngFor="let package of packages">
+                                <td>{{package.name}}</td>
+                                <td>Images</td>
+                                <td>{{package.location}}</td>
+                                <td>{{package.description}}</td>
+                                <td>{{package.transpotation}}</td>
+                                <td>{{package.address}}</td>
+                                <td>
+                                    <i routerLink="/admin/packages/edit-package" class="fa fa-edit mr-3"></i>
+                                    <i class="fa fa-trash mr-3"></i>
+                                    <i routerLink="/admin/packages/view-package" class="fa fa-eye"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

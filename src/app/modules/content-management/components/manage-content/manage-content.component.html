@@ -1,0 +1,71 @@
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <h4>Manage Content</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container-fluid content-management">
+
+  <mat-tab-group>
+
+    <!--abaout us content can be updated from here-->
+    <mat-tab label="About US">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <app-ngx-editor style="height: 500px" [placeholder]="'Enter text here...'" [spellcheck]="true"
+              [(ngModel)]="htmlContent">
+            </app-ngx-editor>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col mt-4 d-flex justify-content-end">
+            <button class="btn theme-button">Save</button>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+
+
+    <!--contact us content can be updated from here-->
+
+    <mat-tab label="Contact Us">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 mt-4">
+            <mat-form-field class="w-100 example-full-width">
+              <input class="w-100" matInput placeholder="Location" >
+            </mat-form-field>
+          </div>
+          <div class="col-6 mt-4">
+            <mat-form-field class="w-100 example-full-width">
+              <input class="w-100" matInput placeholder="Email Id" >
+            </mat-form-field>
+          </div>
+          <div class="col-6 mt-4">
+            <mat-form-field class="w-100 example-full-width">
+              <input class="w-100" matInput placeholder="Alternate Email Id" >
+            </mat-form-field>
+          </div>
+          <div class="col-6 mt-4">
+            <mat-form-field class="w-100 example-full-width">
+              <input class="w-100" matInput placeholder="Tel Number" >
+            </mat-form-field>
+          </div>
+          <div class="col-6 mt-4">
+            <mat-form-field class="w-100 example-full-width">
+              <input class="w-100" matInput placeholder="Alternate Tel Number" >
+            </mat-form-field>
+          </div>
+          <div class="col-12 mt-4 d-flex justify-content-end">
+            <button class="btn theme-button">Update</button>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</section>
